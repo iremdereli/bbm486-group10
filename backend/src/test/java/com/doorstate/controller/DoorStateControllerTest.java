@@ -1,8 +1,8 @@
-package com.bbm486group10.controller;
+package com.doorstate.controller;
 
-import com.bbm486group10.exception.AlreadyClosedException;
-import com.bbm486group10.model.state.ClosedDoorState;
-import com.bbm486group10.model.state.OpenDoorState;
+import com.doorstate.exception.AlreadyClosedException;
+import com.doorstate.model.state.ClosedDoorState;
+import com.doorstate.model.state.OpenDoorState;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

@@ -1,6 +1,6 @@
-package com.bbm486group10.exception;
+package com.doorstate.exception;
 
-import com.bbm486group10.util.constant.ApiMessages;
+import com.doorstate.util.constant.ApiMessages;
 
 public class OpenedDoorCanNotBeLockedException extends RuntimeException {
     public OpenedDoorCanNotBeLockedException() {

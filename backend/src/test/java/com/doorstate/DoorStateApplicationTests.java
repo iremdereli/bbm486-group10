@@ -1,4 +1,4 @@
-package com.bbm486group10;
+package com.doorstate;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

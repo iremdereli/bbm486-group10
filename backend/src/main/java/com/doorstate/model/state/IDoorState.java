@@ -1,4 +1,4 @@
-package com.bbm486group10.model.state;
+package com.doorstate.model.state;
 
 public interface IDoorState {
     IDoorState lock();

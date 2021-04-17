@@ -1,4 +1,4 @@
-package com.bbm486group10.util.constant;
+package com.doorstate.util.constant;
 
 public class ApiMessages {
     public static final String ALREADY_CLOSED_EXCEPTION = "Already Closed";

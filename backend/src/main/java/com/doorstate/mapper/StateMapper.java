@@ -1,9 +1,9 @@
-package com.bbm486group10.mapper;
+package com.doorstate.mapper;
 
-import com.bbm486group10.model.state.ClosedDoorState;
-import com.bbm486group10.model.state.IDoorState;
-import com.bbm486group10.model.state.LockedDoorState;
-import com.bbm486group10.model.state.OpenDoorState;
+import com.doorstate.model.state.ClosedDoorState;
+import com.doorstate.model.state.IDoorState;
+import com.doorstate.model.state.LockedDoorState;
+import com.doorstate.model.state.OpenDoorState;
 
 public class StateMapper {
     public static String stateToString(IDoorState state) {

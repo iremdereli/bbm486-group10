@@ -1,6 +1,6 @@
-package com.bbm486group10.model;
+package com.doorstate.model;
 
-import com.bbm486group10.model.state.IDoorState;
+import com.doorstate.model.state.IDoorState;
 
 public class Door {
     private IDoorState state;

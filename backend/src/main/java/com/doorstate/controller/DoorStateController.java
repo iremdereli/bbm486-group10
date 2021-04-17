@@ -1,8 +1,8 @@
-package com.bbm486group10.controller;
+package com.doorstate.controller;
 
-import com.bbm486group10.model.Door;
-import com.bbm486group10.model.state.OpenDoorState;
-import com.bbm486group10.util.constant.ApiMessages;
+import com.doorstate.model.Door;
+import com.doorstate.model.state.OpenDoorState;
+import com.doorstate.util.constant.ApiMessages;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

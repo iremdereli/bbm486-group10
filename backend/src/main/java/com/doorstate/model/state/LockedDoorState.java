@@ -1,8 +1,8 @@
-package com.bbm486group10.model.state;
+package com.doorstate.model.state;
 
-import com.bbm486group10.exception.AlreadyLockedException;
-import com.bbm486group10.exception.LockedDoorCanNotBeClosedException;
-import com.bbm486group10.exception.LockedDoorCanNotBeOpenedException;
+import com.doorstate.exception.AlreadyLockedException;
+import com.doorstate.exception.LockedDoorCanNotBeClosedException;
+import com.doorstate.exception.LockedDoorCanNotBeOpenedException;
 
 public class LockedDoorState implements IDoorState {
     @Override

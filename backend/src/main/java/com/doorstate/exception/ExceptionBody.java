@@ -1,4 +1,4 @@
-package com.bbm486group10.exception;
+package com.doorstate.exception;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package com.bbm486group10.exception;
+package com.doorstate.exception;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
