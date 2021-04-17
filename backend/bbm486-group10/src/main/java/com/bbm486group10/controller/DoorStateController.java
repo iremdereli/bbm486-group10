@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DoorStateController {
-    private final Door door = new Door(new OpenDoorState());
+    public Door door = new Door(new OpenDoorState());
 
     @PostMapping(value = "lock")
     public ResponseEntity lock() {
