@@ -1,5 +1,7 @@
 package com.bbm486group10.controller;
 
+import com.bbm486group10.exception.AlreadyClosedException;
+import com.bbm486group10.model.state.ClosedDoorState;
 import com.bbm486group10.model.state.OpenDoorState;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -8,6 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.ResponseEntity;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
 
 @ExtendWith(MockitoExtension.class)
 class DoorStateControllerTest {
@@ -22,5 +25,15 @@ class DoorStateControllerTest {
         ResponseEntity responseEntity = doorStateController.close();
         //Assert
         assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
+    }
+
+    @Test
+    void it_should_throw_already_closed_exception_when_close_closed_door() {
+        //Arrange
+        doorStateController.door.setState(new ClosedDoorState());
+        //Act
+        Throwable exception = catchThrowable(() -> doorStateController.close());
+        //Assert
+        assertThat(exception).isInstanceOf(AlreadyClosedException.class);
     }
 }
