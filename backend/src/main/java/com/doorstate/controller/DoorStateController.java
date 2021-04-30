@@ -10,28 +10,28 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DoorStateController {
-    public Door door = new Door(new OpenDoorState());
+  public Door door = new Door(new OpenDoorState());
 
-    @PostMapping(value = "lock")
-    public ResponseEntity lock() {
-        door.lock();
-        return ResponseEntity.ok(ApiMessages.SUCCESS_MESSAGE);
-    }
+  @PostMapping(value = "lock")
+  public ResponseEntity lock() {
+    door.lock();
+    return ResponseEntity.ok(ApiMessages.SUCCESS_MESSAGE);
+  }
 
-    @PostMapping(value = "open")
-    public ResponseEntity open() {
-        door.open();
-        return ResponseEntity.ok(ApiMessages.SUCCESS_MESSAGE);
-    }
+  @PostMapping(value = "open")
+  public ResponseEntity open() {
+    door.open();
+    return ResponseEntity.ok(ApiMessages.SUCCESS_MESSAGE);
+  }
 
-    @PostMapping(value = "close")
-    public ResponseEntity close() {
-        door.close();
-        return ResponseEntity.ok(ApiMessages.SUCCESS_MESSAGE);
-    }
+  @PostMapping(value = "close")
+  public ResponseEntity close() {
+    door.close();
+    return ResponseEntity.ok(ApiMessages.SUCCESS_MESSAGE);
+  }
 
-    @GetMapping(value = "state")
-    public ResponseEntity getState() {
-        return ResponseEntity.ok(door.getState().getClass().getSimpleName());
-    }
+  @GetMapping(value = "state")
+  public ResponseEntity getState() {
+    return ResponseEntity.ok(door.getState().getClass().getSimpleName());
+  }
 }

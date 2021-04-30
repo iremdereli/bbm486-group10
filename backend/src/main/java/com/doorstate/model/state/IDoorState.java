@@ -1,11 +1,11 @@
 package com.doorstate.model.state;
 
 public interface IDoorState {
-    IDoorState lock();
+  IDoorState lock();
 
-    IDoorState unlock();
+  IDoorState unlock();
 
-    IDoorState open();
+  IDoorState open();
 
-    IDoorState close();
+  IDoorState close();
 }

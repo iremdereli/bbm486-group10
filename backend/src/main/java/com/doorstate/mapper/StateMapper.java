@@ -6,14 +6,14 @@ import com.doorstate.model.state.LockedDoorState;
 import com.doorstate.model.state.OpenDoorState;
 
 public class StateMapper {
-    public static String stateToString(IDoorState state) {
-        if (state instanceof OpenDoorState) {
-            return "OPENED";
-        } else if (state instanceof ClosedDoorState) {
-            return "CLOSED";
-        } else if (state instanceof LockedDoorState) {
-            return "LOCKED";
-        }
-        return "LOCKED";
+  public static String stateToString(IDoorState state) {
+    if (state instanceof OpenDoorState) {
+      return "OPENED";
+    } else if (state instanceof ClosedDoorState) {
+      return "CLOSED";
+    } else if (state instanceof LockedDoorState) {
+      return "LOCKED";
     }
+    return "LOCKED";
+  }
 }
