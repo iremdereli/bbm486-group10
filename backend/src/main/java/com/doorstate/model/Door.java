@@ -21,6 +21,10 @@ public class Door {
     setState(state.close());
   }
 
+  public void unlock() {
+    setState(state.unlock());
+  }
+
   public IDoorState getState() {
     return state;
   }
