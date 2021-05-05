@@ -13,7 +13,7 @@ export const Door = ({ doorState }) => {
       >
         {doorState === "LockedDoorState" ? (
           <i
-            className="fas fa-lock fa-lg"
+            className="fas fa-lock fa-2x"
             style={{
               color: "white",
               marginRight: "15px",
