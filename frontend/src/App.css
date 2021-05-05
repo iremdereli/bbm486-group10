@@ -1,4 +1,83 @@
+body,
+button,
+i {
+  font-family: "Rubik", sans-serif;
+}
+
+p i {
+  margin: 0 0.5rem;
+}
+
+.fa-exclamation-triangle {
+  color: #d3455a;
+}
+
+.fa-check {
+  color: #1aae9f;
+}
+
+hr.rounded {
+  border-top: 2px solid #788896;
+  border-radius: 5px;
+}
+
+.state {
+  font-size: 27px;
+  font-weight: 600;
+  color: #788896;
+  margin: 0.5rem 0;
+}
+
+.message {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  color: #788896;
+}
+
 .App {
-  text-align: center;
-  margin: auto;
+  margin: 3rem 0;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.backDoor {
+  border-radius: 0.5rem;
+  background-color: #333;
+  position: relative;
+  width: 300px;
+  height: 450px;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.door {
+  border-radius: 0.5rem;
+  background-color: brown;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 450px;
+
+  transform-origin: left;
+  /*Speed of the Door animation*/
+  transition: all 0.5s ease-in-out;
+}
+
+button {
+  font-size: 16px;
+  height: 2.5rem;
+  margin: 0.5rem;
+  width: 7rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 500;
+}
+
+.doorOpen {
+  /*prespectiv creates the door open effect*/
+  transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px)
+    rotateY(-105deg);
 }
