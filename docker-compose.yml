@@ -1,0 +1,19 @@
+version: '2.2'
+services:
+  backend:
+    build: ./backend/.
+    container_name: door-state-backend
+    ports:
+      - 8080:8080
+    networks:
+      - doorstate
+  frontend:
+    build: ./frontend/.
+    container_name: door-state-frontend
+    ports:
+      - 3000:3000
+    networks:
+      - doorstate
+networks:
+  doorstate:
+    driver: bridge
