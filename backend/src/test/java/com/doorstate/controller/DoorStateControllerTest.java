@@ -4,6 +4,7 @@ import com.doorstate.exception.*;
 import com.doorstate.model.state.ClosedDoorState;
 import com.doorstate.model.state.LockedDoorState;
 import com.doorstate.model.state.OpenDoorState;
+import com.doorstate.util.constant.ApiMessagesPayload;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -23,7 +24,7 @@ class DoorStateControllerTest {
     // Arrange
     doorStateController.door.setState(new ClosedDoorState());
     // Act
-    ResponseEntity<String> responseEntity = doorStateController.open();
+    ResponseEntity<ApiMessagesPayload> responseEntity = doorStateController.open();
     // Assert
     assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
     assertThat(responseEntity.getBody()).isEqualTo("Success");
@@ -54,7 +55,7 @@ class DoorStateControllerTest {
     // Arrange
     doorStateController.door.setState(new ClosedDoorState());
     // Act
-    ResponseEntity<String> responseEntity = doorStateController.lock();
+    ResponseEntity<ApiMessagesPayload> responseEntity = doorStateController.lock();
     // Assert
     assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
     assertThat(responseEntity.getBody()).isEqualTo("Success");
@@ -76,7 +77,7 @@ class DoorStateControllerTest {
     // Arrange
     doorStateController.door.setState(new LockedDoorState());
     // Act
-    ResponseEntity<String> responseEntity = doorStateController.unlock();
+    ResponseEntity<ApiMessagesPayload> responseEntity = doorStateController.unlock();
     // Assert
     assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
     assertThat(responseEntity.getBody()).isEqualTo("Success");
@@ -138,7 +139,7 @@ class DoorStateControllerTest {
     // Arrange
     doorStateController.door.setState(new OpenDoorState());
     // Act
-    ResponseEntity<String> responseEntity = doorStateController.close();
+    ResponseEntity<ApiMessagesPayload> responseEntity = doorStateController.close();
     // Assert
     assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
     assertThat(responseEntity.getBody()).isEqualTo("Success");
@@ -149,7 +150,7 @@ class DoorStateControllerTest {
     // Arrange
     doorStateController.door.setState(new OpenDoorState());
     // Act
-    ResponseEntity<String> responseEntity = doorStateController.getState();
+    ResponseEntity<ApiMessagesPayload> responseEntity = doorStateController.getState();
     // Assert
     assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
     assertThat(responseEntity.getBody()).isEqualTo("OpenDoorState");

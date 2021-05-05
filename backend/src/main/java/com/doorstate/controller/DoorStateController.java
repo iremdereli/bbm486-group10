@@ -3,6 +3,7 @@ package com.doorstate.controller;
 import com.doorstate.model.Door;
 import com.doorstate.model.state.ClosedDoorState;
 import com.doorstate.util.constant.ApiMessages;
+import com.doorstate.util.constant.ApiMessagesPayload;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,31 +16,32 @@ public class DoorStateController {
   public final Door door = new Door(new ClosedDoorState());
 
   @PostMapping(value = "lock")
-  public ResponseEntity<String> lock() {
+  public ResponseEntity<ApiMessagesPayload> lock() {
     door.lock();
-    return ResponseEntity.ok(ApiMessages.SUCCESS_MESSAGE);
+    return ResponseEntity.ok(ApiMessages.createApiMessage(ApiMessages.SUCCESS_MESSAGE));
   }
 
   @PostMapping(value = "unlock")
-  public ResponseEntity<String> unlock() {
+  public ResponseEntity<ApiMessagesPayload> unlock() {
     door.unlock();
-    return ResponseEntity.ok(ApiMessages.SUCCESS_MESSAGE);
+    return ResponseEntity.ok(ApiMessages.createApiMessage(ApiMessages.SUCCESS_MESSAGE));
   }
 
   @PostMapping(value = "open")
-  public ResponseEntity<String> open() {
+  public ResponseEntity<ApiMessagesPayload> open() {
     door.open();
-    return ResponseEntity.ok(ApiMessages.SUCCESS_MESSAGE);
+    return ResponseEntity.ok(ApiMessages.createApiMessage(ApiMessages.SUCCESS_MESSAGE));
   }
 
   @PostMapping(value = "close")
-  public ResponseEntity<String> close() {
+  public ResponseEntity<ApiMessagesPayload> close() {
     door.close();
-    return ResponseEntity.ok(ApiMessages.SUCCESS_MESSAGE);
+    return ResponseEntity.ok(ApiMessages.createApiMessage(ApiMessages.SUCCESS_MESSAGE));
   }
 
   @GetMapping(value = "state")
-  public ResponseEntity<String> getState() {
-    return ResponseEntity.ok(door.getState().getClass().getSimpleName());
+  public ResponseEntity<ApiMessagesPayload> getState() {
+    return ResponseEntity.ok(
+        ApiMessages.createApiMessage(door.getState().getClass().getSimpleName()));
   }
 }

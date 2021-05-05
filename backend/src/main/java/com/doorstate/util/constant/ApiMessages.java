@@ -10,4 +10,8 @@ public class ApiMessages {
   public static final String OPENED_DOOR_CAN_NOT_BE_LOCKED = "Opened door can't be locked";
   public static final String OPENED_DOOR_CAN_NOT_BE_UNLOCKED = "Opened door can't be unlocked";
   public static final String SUCCESS_MESSAGE = "Success";
+
+  public static ApiMessagesPayload createApiMessage(String message) {
+    return new ApiMessagesPayload(message);
+  }
 }
