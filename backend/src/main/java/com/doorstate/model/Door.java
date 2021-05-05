@@ -10,19 +10,23 @@ public class Door {
   }
 
   public void lock() {
-    setState(state.lock());
+    IDoorState newState = state.lock();
+    setState(newState);
   }
 
   public void open() {
-    setState(state.open());
+    IDoorState newState = state.open();
+    setState(newState);
   }
 
   public void close() {
-    setState(state.close());
+    IDoorState newState = state.close();
+    setState(newState);
   }
 
   public void unlock() {
-    setState(state.unlock());
+    IDoorState newState = state.unlock();
+    setState(newState);
   }
 
   public IDoorState getState() {
