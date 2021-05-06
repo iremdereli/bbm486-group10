@@ -1,7 +1,11 @@
+import { useState, useEffect } from "react";
 import "./App.css";
-import { useEffect, useState } from "react";
-import { Button } from "./components/Button";
+import { ButtonGroup } from "./components/ButtonGroup";
 import { Door } from "./components/Door";
+import { MessageContainer } from "./components/MessageContainer";
+import * as Message from "./constants/Message";
+
+const BASE_URL = "http://localhost:8080/";
 
 function App() {
   const [doorState, setDoorState] = useState("ClosedDoorState");
@@ -11,7 +15,7 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("http://localhost:8080/state");
+      const response = await fetch(BASE_URL + "state");
       const body = await response.json();
       setDoorState(body.message);
     }
@@ -19,9 +23,9 @@ function App() {
     setIsLoading(false);
   }, []);
 
-  const changeDoorState = async (e) => {
+  const handleDoorStateChange = async (e) => {
     const buttonName = e.target.name;
-    const response = await fetch(`http://localhost:8080/${buttonName}`, {
+    const response = await fetch(BASE_URL + buttonName, {
       method: "POST",
     });
     const body = await response.json();
@@ -30,19 +34,19 @@ function App() {
       switch (buttonName) {
         case "open":
           setDoorState("OpenDoorState");
-          setMessage("The door opened successfully.");
+          setMessage(Message.openDoor);
           break;
         case "close":
           setDoorState("ClosedDoorState");
-          setMessage("The door closed successfully.");
+          setMessage(Message.closeDoor);
           break;
         case "lock":
           setDoorState("LockedDoorState");
-          setMessage("The door locked successfully.");
+          setMessage(Message.lockDoor);
           break;
         case "unlock":
           setDoorState("ClosedDoorState");
-          setMessage("The door unlocked successfully.");
+          setMessage(Message.unlockDoor);
           break;
       }
     } else {
@@ -57,53 +61,21 @@ function App() {
         State: {isLoading ? "Loading..." : doorState.replace("DoorState", "")}
       </p>
       <hr className="rounded" />
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-        }}
-      >
+      <div className="container">
         <Door doorState={doorState} />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-evenly",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <Button name="Open" color="#1aae9f" onClick={changeDoorState} />
-            <Button name="Close" color="#d3455a" onClick={changeDoorState} />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <Button name="Lock" color="#1aae9f" onClick={changeDoorState} />
-            <Button name="Unlock" color="#d3455a" onClick={changeDoorState} />
-          </div>
+        <div className="button-group-container">
+          <ButtonGroup
+            names={["Open", "Close"]}
+            onClick={handleDoorStateChange}
+          />
+          <ButtonGroup
+            names={["Lock", "Unlock"]}
+            onClick={handleDoorStateChange}
+          />
         </div>
       </div>
       <hr className="rounded" />
-      {message !== "" ? (
-        <p className="message">
-          <i
-            className={
-              isError
-                ? "fas fa-exclamation-triangle fa-lg"
-                : "fas fa-check fa-lg"
-            }
-          ></i>
-          {message}
-        </p>
-      ) : null}
+      <MessageContainer message={message} isError={isError} />
     </div>
   );
 }
