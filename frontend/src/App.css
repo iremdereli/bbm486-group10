@@ -8,17 +8,96 @@ p i {
   margin: 0 0.5rem;
 }
 
-.fa-exclamation-triangle {
-  color: #d3455a;
+button {
+  font-size: 16px;
+  height: 2.5rem;
+  margin: 0.5rem;
+  width: 7rem;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
 }
 
-.fa-check {
-  color: #1aae9f;
+.positive {
+  background-color: #1aae9f;
+}
+
+.positive:hover {
+  background-color: #57cfc2;
+}
+
+.negative {
+  background-color: #d3455a;
+}
+
+.negative:hover {
+  background-color: #ed8090;
 }
 
 hr.rounded {
   border-top: 2px solid #788896;
   border-radius: 5px;
+}
+
+.App {
+  margin: 3rem 0;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button-group-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.back-door {
+  border-radius: 0.5rem;
+  background-color: #333;
+  position: relative;
+  width: 300px;
+  height: 450px;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.door {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 0.5rem;
+  background-color: brown;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 450px;
+
+  transform-origin: left;
+  /*Speed of the Door animation*/
+  transition: all 0.5s ease-in-out;
+}
+
+.door i {
+  color: white;
+  margin-right: 15px;
+}
+
+.door-open {
+  /*prespectiv creates the door open effect*/
+  transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px)
+    rotateY(-105deg);
 }
 
 .state {
@@ -35,49 +114,10 @@ hr.rounded {
   color: #788896;
 }
 
-.App {
-  margin: 3rem 0;
-  margin-left: 20%;
-  margin-right: 20%;
+.fa-exclamation-triangle {
+  color: #d3455a;
 }
 
-.backDoor {
-  border-radius: 0.5rem;
-  background-color: #333;
-  position: relative;
-  width: 300px;
-  height: 450px;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
-.door {
-  border-radius: 0.5rem;
-  background-color: brown;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 300px;
-  height: 450px;
-
-  transform-origin: left;
-  /*Speed of the Door animation*/
-  transition: all 0.5s ease-in-out;
-}
-
-button {
-  font-size: 16px;
-  height: 2.5rem;
-  margin: 0.5rem;
-  width: 7rem;
-  border: none;
-  border-radius: 0.5rem;
-  color: white;
-  font-weight: 500;
-}
-
-.doorOpen {
-  /*prespectiv creates the door open effect*/
-  transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px)
-    rotateY(-105deg);
+.fa-check {
+  color: #1aae9f;
 }
