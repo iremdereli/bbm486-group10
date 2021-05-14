@@ -33,7 +33,7 @@ Insert gif or link to demo
 
   ## Contributors
 
-* **Güney Kırık(Software Tester, Software Developer)** - [LinkedIn](https://www.linkedin.com/in/guneykirik/)
+* **Güney Kırık(Software Tester, Software Developer, Documenter)** - [LinkedIn](https://www.linkedin.com/in/guneykirik/)
 * **Mehmet Sezer(Software Architect, Software Developer)** - [LinkedIn](https://www.linkedin.com/in/mehmetsezerr/)
 * **İrem Dereli(Software Project Manager, Software Developer)** -  [LinkedIn](https://www.linkedin.com/in/iremdereli/)
 * **Burak Yılmaz(Software Architect, Software Developer)** - [LinkedIn](https://www.linkedin.com/in/burak-yilmaz-b42814171/)
