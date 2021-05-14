@@ -22,7 +22,7 @@ http://localhost:3000/
     
 ## Demo
 
-Insert gif or link to demo
+<img src="gifs/lock-open.gif"/>
 
   
 ## Tech Stack
