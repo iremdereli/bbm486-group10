@@ -1,7 +1,7 @@
 
 # Door State
 
-A brief description of what this project does and who it's for
+BBM467 Course Project Group 10
 
 
 ## Installation 
