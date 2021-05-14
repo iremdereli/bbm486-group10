@@ -23,6 +23,8 @@ http://localhost:3000/
 ## Demo
 
 <img src="gifs/lock-open.gif"/>
+<img src="gifs/unlock-open-close.gif"/>
+<img src="gifs/close.gif"/>
 
   
 ## Tech Stack
