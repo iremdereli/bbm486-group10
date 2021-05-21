@@ -4,6 +4,7 @@ import com.doorstate.exception.*;
 import com.doorstate.model.state.ClosedDoorState;
 import com.doorstate.model.state.LockedDoorState;
 import com.doorstate.model.state.OpenDoorState;
+import com.doorstate.util.constant.ApiMessages;
 import com.doorstate.util.constant.ApiMessagesPayload;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,7 +28,7 @@ class DoorStateControllerTest {
     ResponseEntity<ApiMessagesPayload> responseEntity = doorStateController.open();
     // Assert
     assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
-    assertThat(responseEntity.getBody().getMessage()).isEqualTo("Success");
+    assertThat(responseEntity.getBody().getMessage()).isEqualTo(ApiMessages.SUCCESS_MESSAGE);
   }
 
   @Test
@@ -58,7 +59,7 @@ class DoorStateControllerTest {
     ResponseEntity<ApiMessagesPayload> responseEntity = doorStateController.lock();
     // Assert
     assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
-    assertThat(responseEntity.getBody().getMessage()).isEqualTo("Success");
+    assertThat(responseEntity.getBody().getMessage()).isEqualTo(ApiMessages.SUCCESS_MESSAGE);
   }
 
   // Locked State
@@ -80,7 +81,7 @@ class DoorStateControllerTest {
     ResponseEntity<ApiMessagesPayload> responseEntity = doorStateController.unlock();
     // Assert
     assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
-    assertThat(responseEntity.getBody().getMessage()).isEqualTo("Success");
+    assertThat(responseEntity.getBody().getMessage()).isEqualTo(ApiMessages.SUCCESS_MESSAGE);
   }
 
   @Test
@@ -142,7 +143,7 @@ class DoorStateControllerTest {
     ResponseEntity<ApiMessagesPayload> responseEntity = doorStateController.close();
     // Assert
     assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
-    assertThat(responseEntity.getBody().getMessage()).isEqualTo("Success");
+    assertThat(responseEntity.getBody().getMessage()).isEqualTo(ApiMessages.SUCCESS_MESSAGE);
   }
 
   @Test
