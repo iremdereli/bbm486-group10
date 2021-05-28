@@ -8,10 +8,9 @@ import java.time.LocalDateTime;
 @ControllerAdvice
 public class ExceptionHandler {
 
-  @org.springframework.web.bind.annotation.ExceptionHandler(RuntimeException.class)
-  public ResponseEntity<ExceptionBody> handleUnsupportedCurrencyCreation(RuntimeException e) {
-    return ResponseEntity.badRequest()
-        .body(
-            ExceptionBody.builder().message(e.getMessage()).createdAt(LocalDateTime.now()).build());
-  }
+    @org.springframework.web.bind.annotation.ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<ExceptionBody> handleUnsupportedCurrencyCreation(RuntimeException e) {
+        return ResponseEntity.badRequest()
+                .body(new ExceptionBody(e.getMessage(), LocalDateTime.now()));
+    }
 }
